@@ -2,9 +2,117 @@
 <html>
     <head>
         <title>Calculator BMI</title>
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
+        <header>
+            <h1>BMI Calculator</h1>
+        </header>
+        <main style="color: white;">
+            <div class="main-container">
+                <!--Form BMI-->
+                <div class="container-item">
+                    <h2>Form BMI</h2>
+                <section>
+                    <p>Berat Badan Ideal adalah impian semua orang. Ayo hitung berat badan idealmu...</p>
+                </section>
+                    <section class="container-form">
+                        <div>
+                            <label>Jenis Kelamin</label> <br/>
+                                <input type="radio" name="gender" id="sex-man"><label for="sex-man">Laki-Laki</label>
+                                <input type="radio" name="gender" id="sex-woman"><label for="sex-woman">Perempuan</label>
+                                
+                        </div>
+                        <div>
+                            <label>Berat Badan (kg)</label> <br/>
+                            <input class="form-input" id="w-input" type="number" min="0" required>
+                        </div>
+                        <div>
+                            <label>Usia</label> <br/>
+                            <input class="form-input" id="age" type="number" min="0" required>
+                        </div>
+                        <div>
+                            <label>Tinggi Badan (cm)</label> <br/>
+                            <input class="form-input" id="h-input" type="number" min="0" required>
+                        </div>
+                        <div><!--Tombol Hasil dan Reset-->
+                            <button class="main" type="button" id="calculate-button" onclick="Calculate()">Hitung BMI</button> <br>
+                            <button style="color: white;" type="button" id="reset-button" onclick="Reset()">Reset</button>
+                        </div>
+                        </section>
+                    <section>
+                        <h3>Catatan</h3>
+                        <p>Kalkulator ini bukanlah sebuah alat diagnosis medis ataupun pengganti konsultasi dokter spesialis/nutrisionis. Alat ini hanya untuk skrining yang bisa Anda lakukan mandiri, sebelum memeriksakan diri ke dokter. Setelah melihat hasil ini atau membaca artikel lain di Hello Sehat, sebaiknya tetap konsultasi ke dokter agar tahu lebih pasti kondisi kesehatan Anda saat ini. Hasil kalkulator BMI ini tidak bisa digunakan jika anda memiliki gangguan pola makan.</p>
+                    </section>
+
+                </div>
+                <!--Hasil BMI-->
+                <div class="container-item">
+                    <h2>Result</h2>
+                    <section class="container-result">
+                        <h4>BMI Anda</h4>
+                        <h1><div id="bmi-output"></div></h1>
+                        <div class="status">
+                             <h4>Berat Badan Anda<div id="bmi-status"></div> </h4>
+                        </div>
+                        <button class="main" type="button">Download Hasil BMI</button><!--Masih Belum Bisa Diunduh!-->
+                    </section>
+                    <!--Jika hasil Underweight-->
+                    <section id="underweight" style="display: none;">
+                        <h3>Berat Badan Kurang</h3>
+                        <p >Berat badan anda kurang dari ideal, anda dapat mencoba hal-hal berikut untuk menambah berat badan:</p>
+                        <ol>
+                            <li>Mengonsumsi Makanan yang Kaya Nutrisi</li>
+                            <li>Makan Lebih Sering dengan Porsi Sedikit</li>
+                            <li>Memilih Makan Padat Kalori</li>
+                            <li>Mengonsumsi Camilan Sehat</li>
+                            <li>Rutin Berolahraga</li>
+                            <li>Minum di Waktu yang Tepat</li>
+                            <li>Memperbanyak Air Mineral dan Susu</li>
+                        </ol>
+                    </section>
+                    <!--Jika Hasil Overweight atau Obesity-->
+                    <section id="overweight" style="display: none;">
+                        <h3>Berat Badan Berlebih</h3>
+                        <p >Berat badan anda lebih dari ideal, anda dapat mencoba hal-hal berikut untuk menurunkan berat badan:</p>
+                        <ol>
+                            <li>Makan Secukupnya</li>
+                            <li>Jangan Lewatkan Sarapan</li>
+                            <li>Biasakan Minum Air Putih Secara Rutin</li>
+                            <li>Perbanyak Konsumsi Serat</li>
+                            <li>Seimbangkan dengan Buah dan Sayur</li>
+                            <li>Hindari <em>Stress Eating</em></li>
+                            <li>Atur Waktu Tidur dengan Baik</li>
+                        </ol>
+                    </section>
+                    <section id="normal" style="display: none;">
+                        <!--Jika Hasil Normal-->
+                        <h3>Berat Badan Ideal</h3>
+                        <p>Selamat, berat badan anda ideal. Anda dapat melakukan beberapa hal ini untuk mempertahankan berat badan ideal:</p>
+                        <ol>
+                            <li>Mengonsumsi Makanan yang Sehat dan Bergizi</li>
+                            <li>Mengatur Pola Makan agar Berjalan dengan Tepat dan Baik</li>
+                            <li>Tidak Mengonsumsi Rokok dan Alkohol</li>
+                            <li>Rutin Melakukan Aktifitas Fisik atau Latihan Fisik</li>
+                            <li>Jaga Berat Badan agar Tetap Ideal</li>
+                        </ol>
+                    </section>
+                    <section id="help" style="display: none;">
+                        <p>Anda dapat mengunjungi beberapa website ini untuk mendapatkan bantuan terkait masalah kesehatan anda</p>
+            <button id="link1"><a href="https://www.halodoc.com/">Halodoc</a></button>
+            <button id="link2"><a href="https://www.alodokter.com/">Alodokter</a></button>
+            <button id="link3"><a href="https://www.klikdokter.com/">Klikdokter</a></button>
+                    </section>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <h2>Tentang Kami</h2>
+            <p>Kami adalah web programmer pemula yang baru saja memulai karir kami. Ini adalah <em>project</em> pertama kami yang dibuat dengan sepenuh hati. Jika terdapat kendala anda dapat <a href="#">laporkan</a> pada kami.</p>
+            <div class="image-footer">
+                <img src="https://tpcfoodpack.co.id/app/uploads/2017/12/health-at-work.jpg">
+            </div>
+        </footer>
         <script src="js/script.js"></script>
     </body>
 </html>

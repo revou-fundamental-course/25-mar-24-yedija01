@@ -1,0 +1,93 @@
+/* Header Syles */
+header {
+    background-color: #007bff;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+header>h1 {
+    font-size: 2.5rem;
+}
+
+/* Container Styles */
+.main-container {
+    display: flex;
+    background: #0f172a;
+}
+
+.container-item {
+    border: none;
+    width: 100%;
+    padding: 24px;
+}
+
+.container-item>h2 {
+    text-align: center;
+}
+
+.container-result, 
+.container-form {
+    text-align: center;
+    padding-top: 8px;
+    padding-bottom: 24px;
+}
+
+.container-form {
+    text-align: left;
+}
+
+.container-form>div {
+    padding: 8px;
+}
+
+.form-input {
+    border: none;
+    background-color: white;
+}
+
+/*For Disappering the Arrow Input */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.main {
+    border: none;
+    height: 32px;
+    padding-right: 24px;
+    padding-left: 24px;
+    border-radius: 4px;
+    background-color: deepskyblue;
+    color: white;
+}
+
+#calculate-button {
+    border: 0px;
+}
+
+/* Reset Button Styles */
+#reset-button {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+    padding-left: 2px;
+    font-size: smaller;
+}
+
+/* Help Button Style */
+button {
+    background-color: red;
+}
+
+/* Image setting under the web */
+footer img {
+    position: absolute;
+    width: 100%;
+    height: 20%;
+}
+/* Bingung mau style gimana */
